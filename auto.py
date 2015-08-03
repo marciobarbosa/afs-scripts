@@ -76,9 +76,13 @@ def reboot():
 
 def insert_ip_addr():
 	fd =  open("/usr/afs/etc/CellServDB", "a")
+	fd_cli = open("/usr/vice/etc/CellServDB", "a")
 	fd.write("192.168.25.23\t #nayane\n")
 	fd.write("192.168.25.25\t #gabriela\n")
+	fd_cli.write("192.168.25.23\t #nayane\n")
+	fd_cli.write("192.168.25.25\t #gabriela\n")
 	fd.close()
+	fd_cli.close()
 
 def get_tokens():
 	call(['/home/marcio/openafs/amd64_linux26/dest/bin/aklog'])
